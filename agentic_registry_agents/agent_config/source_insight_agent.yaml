@@ -1,0 +1,36 @@
+name: Source Code Insights
+description: Analyzes Git repositories to provide comprehensive code insights including structure, languages, commits, and contributor statistics
+type: mcp
+cloud_provider: aws
+port: 8101
+order: 1
+instructions: |
+  Please provide the Git repository URL, and the agent will clone the repository to generate comprehensive analytical statistics. 
+  The agent will provide the following statistics:
+    - repository structure
+    - programming language used
+    - file list
+    - commit history
+    - contributors stats
+  
+  User may select the list of statistics from the advanced options. By default, all the statistics are provided.
+
+servers: [
+  {
+    'name': 'git_utils',
+    'command': 'uv',
+    'args': [ "run", "--with", "git+https://github.com/Capgemini-Innersource/ptr_mcp_servers_registry.git", "git-mcp-server" ],
+    'description': 'Git cloning and git operation tools',
+    'title': 'Git Utils Server',
+    'headers': {
+        'test': '1'
+    }
+  }
+]
+system_prompt: |
+  You are a helpful assistant with access to git utilities. Format the output in a way that is easy to read and understand.
+  Always provide clear responses.
+tags:
+- git
+- insight
+- analyze
