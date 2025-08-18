@@ -1,8 +1,8 @@
 active: false
 name: Vulnerability Insights
 description: Analyzes Git repositories for security vulnerabilities and provides remediation recommendations
-type: bedrock
 cloud_provider: aws
+type: custom
 port: 8103
 order: 3
 instructions: |

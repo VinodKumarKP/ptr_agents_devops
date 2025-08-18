@@ -7,12 +7,18 @@ from agentic_registry_agents.core.agent_executor import AgentExecutor
 async def main():
     try:
         # agent = SourceInsightAgent("source_insight_agent")
-        agent_invoker = AgentExecutor(agent_name="source_insight_agent")
+        agent_invoker = AgentExecutor(agent_name="intelligent_decisioning_agent")
         await agent_invoker.initialize()
         user_message = 'analyze the repository https://github.com/VinodKumarKP-cpg/python_project.git'
         # Example of calling the synchronous invocation
-        response = await agent_invoker.invoke(user_message)
-        print(response)
+        # response = await agent_invoker.invoke(user_message)
+        # print(response)
+        # Example of streaming (if needed)
+        print("\n--- Streaming Response ---")
+        async for chunk in await agent_invoker.astream(user_message):
+            if 'messages' in chunk:
+                for msg in chunk['messages']:
+                    print(msg)
     except Exception as e:
         print(f"Error: {e}")
         import traceback

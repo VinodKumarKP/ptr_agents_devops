@@ -1,6 +1,6 @@
 name: Source Code Insights
 description: Analyzes Git repositories to provide comprehensive code insights including structure, languages, commits, and contributor statistics
-type: mcp
+type: custom
 cloud_provider: aws
 port: 8101
 order: 1
