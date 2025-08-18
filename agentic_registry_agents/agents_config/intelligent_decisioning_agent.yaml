@@ -1,6 +1,6 @@
 name: Intelligent Release Decisioning
 description: Multi-agent system that analyzes code scan results and provides deployment readiness assessment with recommended actions
-type: custom
+type: multi-agent
 port: 8102
 agent_list:
   - source_insight_agent
