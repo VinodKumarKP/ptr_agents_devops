@@ -1,0 +1,53 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "ruamel.yaml"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic_registry_agents_devops"
+version = "1.0.0"
+description = "AI Agent registry"
+authors = [{name = "Vinod Kumar KP", email = "vinod.kunnum-purath@capgemini.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.11"
+keywords = ["agent", "agent-server-registry"]
+dynamic = ["scripts"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "mcp>=1.0.0",
+    "fastmcp>=2.9.0",
+    "nest-asyncio",
+    "ruamel.yaml",
+    "requests",
+    "boto3",
+    "langchain",
+    "langchain-aws",
+    "langgraph-supervisor",
+    "langchain-mcp-adapters",
+    "gitdb==4.0.12",
+    "GitPython==3.1.44",
+    "agent-core@git+https://github.com/Capgemini-Innersource/ptr_agent_core@main"
+]
+
+
+[project.urls]
+Homepage = "https://github.com/Capgemini-Innersource/ptr_mcp_servers_registry"
+Repository = "https://github.com/Capgemini-Innersource/ptr_mcp_servers_registry.gi"
+Issues = "https://github.com/Capgemini-Innersource/ptr_mcp_servers_registry/issues"
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agentic_registry_agents*"]
+exclude = [".venv", "build", "agent_registry.egg_info"]
+
+[tool.setuptools.package-data]
+"agentic_registry_agents" = ["**/*"]

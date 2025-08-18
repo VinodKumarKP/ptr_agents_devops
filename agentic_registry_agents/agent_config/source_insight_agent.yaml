@@ -19,7 +19,7 @@ servers: [
   {
     'name': 'git_utils',
     'command': 'uv',
-    'args': [ "run", "--with", "git+https://github.com/Capgemini-Innersource/ptr_mcp_servers_registry.git", "git-mcp-server" ],
+    'args': [ "run", "--with", "git+https://github.com/Capgemini-Innersource/ptr-development-mcp-servers.git", "git-mcp-server" ],
     'description': 'Git cloning and git operation tools',
     'title': 'Git Utils Server',
     'headers': {
