@@ -4,3 +4,4 @@
 build
 uv.lock
 docker-compose.yaml
+logs
