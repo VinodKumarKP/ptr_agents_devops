@@ -5,14 +5,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agentic_registry_agents_devops"
-version = "1.0.0"
 description = "AI Agent registry"
 authors = [{name = "Vinod Kumar KP", email = "vinod.kunnum-purath@capgemini.com"}]
 license = {text = "MIT"}
 readme = "README.md"
 requires-python = ">=3.11"
 keywords = ["agent", "agent-server-registry"]
-dynamic = ["scripts"]
+dynamic = ["scripts", "version"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -51,3 +50,9 @@ exclude = [".venv", "build", "agent_registry.egg_info"]
 
 [tool.setuptools.package-data]
 "agentic_registry_agents" = ["**/*"]
+
+# Configuration for setuptools_scm (git-based versioning)
+[tool.setuptools_scm]
+write_to = "agentic_registry_agents/_version.py"
+version_scheme = "post-release"
+local_scheme = "no-local-version"
