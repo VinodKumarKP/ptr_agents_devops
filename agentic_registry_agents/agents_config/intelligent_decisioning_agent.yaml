@@ -3,8 +3,10 @@ description: Multi-agent system that analyzes code scan results and provides dep
 type: multi-agent
 port: 8102
 agent_list:
-  - source_insight_agent
-  - devops_code_remediation_ag
+  - code_advisor_agent
+  - test_insight_agent
+  - jira_agent
+  - servicenow_agent
 order: 2
 instructions: |
   This agent will analyze the code scan result of the provided project and summarize the results. Based on that analysis, provide a list of recommended actions 
