@@ -1,0 +1,26 @@
+active: false
+name: Jira Operation agent
+type: mcp
+order: 1
+instructions: |
+  This agent allows you to perform Jira operations such as creating issues, updating issues, and retrieving issue details.
+  
+  Please specify the operation (e.g., create issue, update issue, get issue details) and provide necessary information like project key, issue type, summary, description, or issue key.
+servers:
+  - name: jira_utils
+    command: uv
+    args:
+      - "run"
+      - "--with"
+      - "git+https://github.com/Capgemini-Innersource/ptr-enterprise-mcp-servers.git"
+      - "jira_server"
+    description: Jira related tools
+    title: Jira Server
+    env:
+      JIRA_BASE_URL: "https://capgemini-team-jiraai.atlassian.net/rest/api/3"
+      JIRA_USERNAME: "vinod.kunnum-purath@capgemini.com"
+      JIRA_API_TOKEN: "ATATT3xFfGF0QIq2oIWSmMkdsojv4cuSaUJoa2QkFuNJlanROHV0g8c2dnnBqWHPaEcekxtvnqVRgdG_PgSeoh5UmlmaL0qZTm3e3795ZqxNhNl1eoh_I5HAVeJm0djCyAXREaibZAmVx8AMntTA2awdM_45N2JPED6zcLX-OT-8KI9Zl7oqG18=93F7607D"
+system_prompt: |
+  You are a helpful assistant with access to jira operation tools 
+  If necessary tools are not available, use model to get the answer. If the result is not available, inform the user that you are unable to find the information.
+  Always provide clear responses.

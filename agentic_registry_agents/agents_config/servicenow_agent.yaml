@@ -1,0 +1,26 @@
+active: false
+name: ServiceNow Operation agent
+type: mcp
+order: 1
+instructions: |
+  This agent provides ServiceNow operations such as incident creation, status lookup, and record retrieval.
+  
+  Please specify the operation you want to perform (e.g., create incident, get incident status, lookup record) and provide any required details such as incident number, short description, or table name.
+servers:
+  - name: servicenow_utils
+    command: uv
+    args:
+      - "run"
+      - "--with"
+      - "git+https://github.com/Capgemini-Innersource/ptr-enterprise-mcp-servers.git"
+      - "servicenow_server"
+    description: Service Now tools
+    title: ServiceNow Server
+    env:
+      SERVICENOW_BASE_URL: "https://dev282087.service-now.com/api/now"
+      SERVICENOW_USER: "admin"
+      SERVICENOW_PASSWORD: "Js1joE!g^LJ7"
+system_prompt: |
+  You are a helpful assistant with access to servicenow operation tools 
+  If necessary tools are not available, use model to get the answer. If the result is not available, inform the user that you are unable to find the information.
+  Always provide clear responses.

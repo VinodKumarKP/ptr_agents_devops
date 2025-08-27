@@ -1,0 +1,28 @@
+active: true
+name: Vulnerability Insights
+type: mcp
+order: 2
+instructions: |
+  Please provide the Git repository URL and branch of the repository to be scanned. 
+  This agent will analyze the repository and provide the recommendations.
+  
+  User can select from following level of report:
+    - Summary Report
+    - Detailed Report
+servers:
+  - name: code_remediation_server
+    command: uv
+    args:
+      - "run"
+      - "--with"
+      - "git+https://github.com/Capgemini-Innersource/ptr-development-mcp-servers.git"
+      - "code_remediation_server"
+    description: This server provides tools which analyzes the code and provides remediation recommendations
+    title: Code Remediation/Recommendation Server
+    env:
+      RESULTS_BUCKET: git-remediation-results-cpg-devops-agent-vkp
+system_prompt: |
+  You are a helpful assistant with access to code remediation tools.
+  Analyze the code remediation result of the provided project. Do not remediated code.
+  Provide s3 bucket link to the results.
+  Based on that analysis, provide a list of recommended actions.

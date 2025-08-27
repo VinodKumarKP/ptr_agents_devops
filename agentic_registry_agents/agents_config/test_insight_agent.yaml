@@ -1,0 +1,23 @@
+active: false
+name: Test insights
+type: mcp
+order: 2
+instructions: |
+  This agent will analyze the test result of the provided project and summarize the results. Based on that analysis, provide a list of recommended actions 
+  and also indicate whether the project is ready for deployment or not.
+  
+  User can select from following level of report:
+    - Summary Report
+    - Detailed Report
+servers:
+  - name: testing_result_utils
+    command: python3.11
+    args:
+      - mcp_servers/mcp_testing_server.py
+    description: This server provides tools which returns jmeter and unit test results
+    title: Test Result Server
+system_prompt: |
+  You are a helpful assistant with access to code scan result tool. 
+  Analyze the test summary and summarize the results. If the prompt already has the scan results, use those results directly.
+  Based on that analysis, provide a list of recommended actions 
+  and also indicate whether the project is ready for deployment or not.
