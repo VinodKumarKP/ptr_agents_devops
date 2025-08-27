@@ -4,7 +4,6 @@ type: multi-agent
 port: 8102
 agent_list:
   - code_advisor_agent
-  - test_insight_agent
   - jira_agent
   - servicenow_agent
 order: 2
