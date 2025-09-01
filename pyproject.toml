@@ -23,6 +23,7 @@ classifiers = [
 dependencies = [
     "mcp>=1.0.0",
     "fastmcp>=2.9.0",
+    "fastapi",
     "nest-asyncio",
     "ruamel.yaml",
     "requests",
