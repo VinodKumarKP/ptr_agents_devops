@@ -56,3 +56,4 @@ exclude = [".venv", "build", "agent_registry.egg_info"]
 write_to = "agentic_registry_agents/_version.py"
 version_scheme = "post-release"
 local_scheme = "no-local-version"
+
