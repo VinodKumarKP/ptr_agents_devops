@@ -1,0 +1,34 @@
+name: Git PR Insights
+description: Analyzes GitHub pull requests to provide insights such as changed files, contributors, review status, and code quality metrics.
+type: mcp
+cloud_provider: aws
+port: 8101
+order: 1
+instructions: |
+  Please provide the GitHub repository URL and the pull request number. The agent will analyze the pull request and generate insights including:
+    - list of changed files
+    - summary of code changes
+    - contributors and reviewers
+    - review status and comments
+    - code quality and potential issues
+
+  You may select specific insights from advanced options. By default, all insights are provided.
+
+servers: [
+  {
+    'name': 'git_pr_utils',
+    'command': 'uv',
+    'args': [ "run", "--with", "git+https://github.com/Capgemini-Innersource/ptr-development-mcp-servers.git", "git_pr_analyzer_server" ],
+    'description': 'Git PR analysis and utilities',
+    'title': 'Git PR Utils Server'
+  }
+]
+system_prompt: |
+  You are a helpful assistant with access to Git PR analysis utilities. Format the output for clarity and easy understanding.
+  Always provide clear, actionable insights.
+tags:
+- git
+- pr
+- pull-request
+- insight
+- analyze
