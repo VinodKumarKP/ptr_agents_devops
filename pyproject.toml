@@ -34,7 +34,7 @@ dependencies = [
     "langchain-mcp-adapters",
     "gitdb==4.0.12",
     "GitPython==3.1.44",
-    "agent-core@git+https://github.com/Capgemini-Innersource/ptr_agent_core@2901422cc169ec21608eb5531b14e2cf5be5ad8f"
+    "agent-core@git+https://github.com/Capgemini-Innersource/ptr_agent_core@008355a2a1b2ea870dfa392e84d0cea6989c58ca"
 ]
 
 
