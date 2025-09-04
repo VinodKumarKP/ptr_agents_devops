@@ -25,6 +25,13 @@ servers: [
     'headers': {
         'test': '1'
     }
+  },
+  {
+    'name': 'email_utils',
+    'command': 'uv',
+    'args': [ "run", "--with", "git+https://github.com/Capgemini-Innersource/ptr-email-mcp-servers.git", "email_server" ],
+    'description': 'Email sending utils',
+    'title': 'Email Utils Server'
   }
 ]
 system_prompt: |
