@@ -1,6 +1,6 @@
 import os
 
-from agent_core.core.agent_http import AgentHTTPServer as BaseAgentHTTPServer, main as http_main
+from oai_agent_core.core.agent_http import AgentHTTPServer as BaseAgentHTTPServer, main as http_main
 
 
 def main():

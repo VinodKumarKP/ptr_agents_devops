@@ -1,6 +1,6 @@
 import os
 
-from agent_core.agents.langchain_agent import LangChainAgent
+from oai_agent_core.agents.langchain_agent import LangChainAgent
 
 
 class CodeDoctorAgent(LangChainAgent):

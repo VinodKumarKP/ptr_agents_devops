@@ -1,6 +1,6 @@
 import os
 
-from agent_core.agents.bedrock_agent import BedRockAgent
+from oai_agent_core.agents.bedrock_agent import BedRockAgent
 
 
 class DevOpsCodeRemediationAgent(BedRockAgent):

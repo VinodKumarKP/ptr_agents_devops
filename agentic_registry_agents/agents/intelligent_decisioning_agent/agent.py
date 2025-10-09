@@ -1,6 +1,6 @@
 import os
 
-from agent_core.agents.multi_agent import MultiAgent
+from oai_agent_core.agents.multi_agent import MultiAgent
 
 
 class IntelligentDecisioningAgent(MultiAgent):

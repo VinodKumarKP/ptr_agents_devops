@@ -19,7 +19,7 @@ for path in path_list:
         sys.path.append(path)
 
 
-from agent_core.core.agent_http import AgentHTTPServer as BaseAgentHTTPServer, main, parse_args
+from oai_agent_core.core.agent_http import AgentHTTPServer as BaseAgentHTTPServer, main, parse_args
 
 from agentic_registry_agents.core.agent_executor import AgentExecutor
 

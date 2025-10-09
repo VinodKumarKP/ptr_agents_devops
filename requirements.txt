@@ -1,1 +1,1 @@
-agent-core@git+https://github.com/Capgemini-Innersource/ptr_agent_core@7e49cbef9e924b6b29b6ad3177e97979d739ee7e
+oai-agent-core@git+https://github.com/Capgemini-Innersource/ptr_agent_core@main

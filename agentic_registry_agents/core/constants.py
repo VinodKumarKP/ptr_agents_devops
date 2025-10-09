@@ -20,8 +20,8 @@ for path in path_list:
     if path not in sys.path:
         sys.path.append(path)
 
-from agent_core.core.base_agent import BaseAgent
-from agent_core.core.constants import Constants as CoreConstants
+from oai_agent_core.core.base_agent import BaseAgent
+from oai_agent_core.core.constants import Constants as CoreConstants
 
 from agentic_registry_agents.agents.source_insight_agent.agent import SourceInsightAgent
 from agentic_registry_agents.agents.intelligent_decisioning_agent.agent import IntelligentDecisioningAgent

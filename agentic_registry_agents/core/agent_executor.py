@@ -18,7 +18,7 @@ for path in path_list:
     if path not in sys.path:
         sys.path.append(path)
 
-from agent_core.core.agent_executor import AgentExecutor as BaseAgentExecutor
+from oai_agent_core.core.agent_executor import AgentExecutor as BaseAgentExecutor
 from agentic_registry_agents.core.constants import Constants
 
 
