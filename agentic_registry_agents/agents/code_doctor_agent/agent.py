@@ -10,4 +10,5 @@ class CodeDoctorAgent(LangChainAgent):
         super().__init__(agent_name,
                          llm=llm,
                          agent_config=agent_config,
+                         config_root=os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
                          **kwargs)
