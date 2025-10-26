@@ -12,8 +12,8 @@ instructions: |
 
 servers:
    - name: 'env_lookup_utils'
-     command: 'env_lookup_server'
-     args: []
+     command: 'uv'
+     args: [ "run", "--with", "git+https://github.com/Capgemini-Innersource/ptr-development-mcp-servers.git ", "git-mcp-server" ]
      description: 'Environment variable lookup and analysis utilities'
      title: 'env Lookup Utils Server'
      headers:
