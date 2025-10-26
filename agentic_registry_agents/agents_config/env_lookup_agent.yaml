@@ -18,6 +18,8 @@ servers:
      title: 'env Lookup Utils Server'
      headers:
        DB_HOST: ${DB_HOST}
+       DB_HOST1: ${DB_HOST1}
+       DUMMY_VARIABLE: ${DUMMY_VARIABLE}
 system_prompt: |
   You are a helpful assistant with access to env lookup tools. Format the output for clarity and easy understanding.
   Always provide clear, actionable insights.
@@ -29,3 +31,5 @@ tags:
 - analyze
 env:
   DB_HOST: ${DB_HOST}
+  DB_HOST1: ${DB_HOST1}
+  DUMMY_VARIABLE: ${DUMMY_VARIABLE}
