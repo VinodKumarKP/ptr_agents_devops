@@ -1,0 +1,31 @@
+name: Env Lookup Agent
+description: Analyze environment variables and provide insights on their usage, security implications, and best practices.
+type: mcp
+cloud_provider: aws
+port: 8101
+order: 1
+instructions: |
+  Please provide the required environment variable names or patterns. The agent will analyze the environment variables and provide insights including:
+    - usage context
+    - security implications
+    - best practices for management
+
+servers:
+   - name: 'env_lookup_utils'
+     command: 'env_lookup_server'
+     args: []
+     description: 'Environment variable lookup and analysis utilities'
+     title: 'env Lookup Utils Server'
+     headers:
+       DB_HOST: ${DB_HOST}
+system_prompt: |
+  You are a helpful assistant with access to env lookup tools. Format the output for clarity and easy understanding.
+  Always provide clear, actionable insights.
+tags:
+- git
+- pr
+- pull-request
+- insight
+- analyze
+env:
+  DB_HOST: ${DB_HOST}
