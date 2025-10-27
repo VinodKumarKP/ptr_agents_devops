@@ -1,5 +1,12 @@
 import os
 
+file_dir = os.path.dirname(os.path.abspath(__file__))
+# Ensure the project root is in sys.path
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(file_dir))))
+import sys
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+
 from oai_agent_core.core.agent_http import AgentHTTPServer as BaseAgentHTTPServer, main as http_main
 from agentic_registry_agents.agents.source_insight_agent.agent import SourceInsightAgent
 
