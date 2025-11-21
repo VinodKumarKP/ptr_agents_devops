@@ -1,1 +1,2 @@
 oai-agent-core@git+https://github.com/Capgemini-Innersource/ptr_agent_core@main
+langfuse

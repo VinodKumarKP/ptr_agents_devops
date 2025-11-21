@@ -34,7 +34,8 @@ dependencies = [
     "langchain-mcp-adapters",
     "gitdb==4.0.12",
     "GitPython==3.1.44",
-    "oai-agent-core@git+https://github.com/Capgemini-Innersource/ptr_agent_core@main"
+    "oai-agent-core@git+https://github.com/Capgemini-Innersource/ptr_agent_core@main",
+    "langfuse"
 ]
 
 
