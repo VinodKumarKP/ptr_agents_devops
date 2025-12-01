@@ -8,16 +8,14 @@ instructions: |
   This agent will analyze the repository and provide the remediated code.
   
   Remediated code will be available in S3 bucket.
-servers:
-  - name: code_remediation_server
+mcps:
+  code_remediation_server:
     command: uv
     args:
       - "run"
       - "--with"
       - "git+https://github.com/Capgemini-Innersource/ptr-development-mcp-servers.git"
       - "code_remediation_server"
-    description: This server provides tools which analyzes the code and provides remediation recommendations
-    title: Code Remediation/Recommendation Server
     env:
       RESULTS_BUCKET: git-remediation-results-cpg-devops-agent-vkp
 system_prompt: |

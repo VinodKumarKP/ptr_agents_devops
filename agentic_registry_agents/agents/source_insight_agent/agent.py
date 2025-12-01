@@ -1,9 +1,9 @@
 import os
 
-from oai_agent_core.agents.langchain_agent import LangChainAgent
+from oai_agent_core.agents.langgraph_agent import LangGraphAgent
 
 
-class SourceInsightAgent(LangChainAgent):
+class SourceInsightAgent(LangGraphAgent):
     def __init__(self,
                  agent_config=None,
                  llm=None,

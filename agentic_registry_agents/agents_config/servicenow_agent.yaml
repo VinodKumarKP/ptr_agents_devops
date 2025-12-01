@@ -6,16 +6,14 @@ instructions: |
   This agent provides ServiceNow operations such as incident creation, status lookup, and record retrieval.
   
   Please specify the operation you want to perform (e.g., create incident, get incident status, lookup record) and provide any required details such as incident number, short description, or table name.
-servers:
-  - name: servicenow_utils
+mcps:
+  servicenow_utils:
     command: uv
     args:
       - "run"
       - "--with"
       - "git+https://github.com/Capgemini-Innersource/ptr-enterprise-mcp-servers.git"
       - "servicenow_server"
-    description: Service Now tools
-    title: ServiceNow Server
     env:
       SERVICENOW_BASE_URL: "https://dev282087.service-now.com/api/now"
       SERVICENOW_USER: "admin"

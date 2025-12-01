@@ -14,21 +14,21 @@ instructions: |
 
   You may select specific insights from advanced options. By default, all insights are provided.
 
-servers: [
-  {
-    'name': 'git_pr_utils',
-    'command': 'uv',
-    'args': [ "run", "--with", "git+https://github.com/Capgemini-Innersource/ptr-development-mcp-servers.git", "git_pr_analyzer_server" ],
-    'description': 'Git PR analysis and utilities',
-    'title': 'Git PR Utils Server'
-  }
-]
+servers:
+  git_pr_utils:
+    command: uv
+    args:
+      - run
+      - --with
+      - git+https://github.com/Capgemini-Innersource/ptr-development-mcp-servers.git
+      - git_pr_analyzer_server
+
 system_prompt: |
   You are a helpful assistant with access to Git PR analysis utilities. Format the output for clarity and easy understanding.
   Always provide clear, actionable insights.
 tags:
-- git
-- pr
-- pull-request
-- insight
-- analyze
+  - git
+  - pr
+  - pull-request
+  - insight
+  - analyze

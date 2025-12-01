@@ -6,16 +6,14 @@ instructions: |
   This agent allows you to perform Jira operations such as creating issues, updating issues, and retrieving issue details.
   
   Please specify the operation (e.g., create issue, update issue, get issue details) and provide necessary information like project key, issue type, summary, description, or issue key.
-servers:
-  - name: jira_utils
+mcps:
+  jira_utils:
     command: uv
     args:
       - "run"
       - "--with"
       - "git+https://github.com/Capgemini-Innersource/ptr-enterprise-mcp-servers.git"
       - "jira_server"
-    description: Jira related tools
-    title: Jira Server
     env:
       JIRA_BASE_URL: "https://capgemini-team-jiraai.atlassian.net/rest/api/3"
       JIRA_USERNAME: "vinod.kunnum-purath@capgemini.com"

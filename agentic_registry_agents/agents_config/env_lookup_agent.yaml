@@ -10,25 +10,23 @@ instructions: |
     - security implications
     - best practices for management
 
-servers:
-   - name: 'env_lookup_utils'
-     command: 'uv'
-     args: [ "run", "--with", "git+https://github.com/Capgemini-Innersource/ptr-cloud-mcp-servers.git ", "env_lookup_server" ]
-     description: 'Environment variable lookup and analysis utilities'
-     title: 'env Lookup Utils Server'
-     headers:
-       DB_HOST: ${DB_HOST}
-       DB_HOST1: ${DB_HOST1}
-       DUMMY_VARIABLE: ${DUMMY_VARIABLE}
+mcps:
+  env_lookup_utils:
+    command: 'uv'
+    args: [ "run", "--with", "git+https://github.com/Capgemini-Innersource/ptr-cloud-mcp-servers.git ", "env_lookup_server" ]
+    headers:
+      DB_HOST: ${DB_HOST}
+      DB_HOST1: ${DB_HOST1}
+      DUMMY_VARIABLE: ${DUMMY_VARIABLE}
 system_prompt: |
   You are a helpful assistant with access to env lookup tools. Format the output for clarity and easy understanding.
   Always provide clear, actionable insights.
 tags:
-- git
-- pr
-- pull-request
-- insight
-- analyze
+  - git
+  - pr
+  - pull-request
+  - insight
+  - analyze
 env:
   DB_HOST: ${DB_HOST}
   DB_HOST1: ${DB_HOST1}
