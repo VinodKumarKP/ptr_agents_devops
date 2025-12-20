@@ -12,12 +12,8 @@ instructions: |
 
 mcps:
   jira_utils:
-    command: uv
-    args:
-      - "run"
-      - "--with"
-      - "git+https://github.com/Capgemini-Innersource/ptr-enterprise-mcp-servers.git"
-      - "jira_server"
+    command: jira_server
+    args: []
     description: Jira related tools
     title: Jira Server
     env:

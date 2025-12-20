@@ -15,9 +15,8 @@ instructions: |
 
 mcps:
   testing_result_utils:
-    command: python3.11
-    args:
-      - "mcp_servers/mcp_testing_server.py"
+    command: testing_result_server
+    args: []
     description: This server provides tools which returns jmeter and unit test results
     title: Test Result Server
 

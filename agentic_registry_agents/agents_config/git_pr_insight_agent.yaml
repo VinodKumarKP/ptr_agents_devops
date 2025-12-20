@@ -16,12 +16,8 @@ instructions: |
 
 mcps:
   git_pr_utils:
-    command: uv
-    args:
-      - "run"
-      - "--with"
-      - "git+https://github.com/Capgemini-Innersource/ptr-development-mcp-servers.git"
-      - "git-pr-analyzer-server"
+    command: git_pr_analyzer_server
+    args: []
     description: Git PR analysis and utilities
     title: Git PR Utils Server
 

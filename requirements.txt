@@ -1,2 +1,5 @@
 oai-agent-core[git,langchain] @ git+https://github.com/Capgemini-Innersource/ptr_agent_core@main
+mcp_registry_servers_development @ git+https://github.com/Capgemini-Innersource/ptr-development-mcp-servers.git@main
+mcp_registry_servers_cloud @ git+https://github.com/Capgemini-Innersource/ptr-cloud-mcp-servers.git@main
+mcp_registry_servers_enterprise @ git+https://github.com/Capgemini-Innersource/ptr-enterprise-mcp-servers.git@main
 langfuse

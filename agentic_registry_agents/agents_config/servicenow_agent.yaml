@@ -12,12 +12,8 @@ instructions: |
 
 mcps:
   servicenow_utils:
-    command: uv
-    args:
-      - "run"
-      - "--with"
-      - "git+https://github.com/Capgemini-Innersource/ptr-enterprise-mcp-servers.git"
-      - "servicenow_server"
+    command: servicenow_server
+    args: []
     description: Service Now tools
     title: ServiceNow Server
     env:

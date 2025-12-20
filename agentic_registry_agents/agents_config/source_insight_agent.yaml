@@ -2,7 +2,7 @@ name: Source Code Insights
 description: Advanced Git repository intelligence platform that provides deep code analysis including repository structure mapping, programming language detection, commit history insights, contributor statistics, and comprehensive development metrics
 type: mcp
 cloud_provider: aws
-port: 8101
+port: 8101`
 
 instructions: |
   Please provide the Git repository URL, and the agent will clone the repository to generate comprehensive analytical statistics. 
@@ -17,12 +17,8 @@ instructions: |
 
 mcps:
   git_utils:
-    command: uv
-    args:
-      - "run"
-      - "--with"
-      - "git+https://github.com/Capgemini-Innersource/ptr_mcp_servers_registry.git"
-      - "git-mcp-server"
+    command: git_server
+    args: []
     description: Git cloning and git operation tools
     title: Git Utils Server
     headers:

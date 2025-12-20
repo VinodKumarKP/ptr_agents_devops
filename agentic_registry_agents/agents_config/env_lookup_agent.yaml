@@ -12,12 +12,8 @@ instructions: |
 
 mcps:
   env_lookup_utils:
-    command: uv
-    args:
-      - "run"
-      - "--with"
-      - "git+https://github.com/Capgemini-Innersource/ptr-cloud-mcp-servers.git"
-      - "env_lookup_server"
+    command: env_lookup_server
+    args: []
     description: Environment variable lookup and analysis utilities
     title: Environment Lookup Utils Server
     env:
