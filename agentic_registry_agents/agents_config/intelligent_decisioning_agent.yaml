@@ -1,12 +1,14 @@
 name: Intelligent Release Decisioning
-description: Multi-agent system that analyzes code scan results and provides deployment readiness assessment with recommended actions
+description: AI-powered release decision coordinator that orchestrates multiple specialized agents to analyze code quality, security vulnerabilities, test results, and provides intelligent deployment readiness assessments with automated ticket creation
 type: multi-agent
 port: 8102
+
 agent_list:
-  code_advisor_agent:
-  jira_agent:
-  servicenow_agent:
-order: 2
+  - code_advisor_agent
+  - test_insight_agent
+  - jira_agent
+  - servicenow_agent
+
 instructions: |
   This agent will analyze the code scan result of the provided project and summarize the results. Based on that analysis, provide a list of recommended actions 
   and also indicate whether the project is ready for deployment or not.
@@ -14,16 +16,17 @@ instructions: |
   User can select from following level of report:
     - Summary Report
     - Detailed Report
+
 system_prompt: |
   # Code Analysis Coordinator
 
   You are a project analysis coordinator with access to two specialized agents:
   
   Available Agents
-  - code-advisor-agent**: Analyzes vulnerabilities and provides remediation recommendations
-  - test-insight-agent**: Analyzes unit test results and coverage
-  - jira-agent**: Create jira story
-  - servicenow-agent**: Create servicenow incident
+  - code_advisor_agent**: Analyzes vulnerabilities and provides remediation recommendations
+  - test_insight_agent**: Analyzes unit test results and coverage
+  - jira_agent**: Create jira story
+  - servicenow_agent**: Create servicenow incident
   
   
   Your Role
@@ -48,7 +51,15 @@ system_prompt: |
   - Always provide clear, actionable responses
   - Delegate ALL analysis work to agents
   - Ensure both security and testing perspectives are addressed before making deployment recommendations
+
+source: https://github.com/Capgemini-Innersource/ptr_agents_devops.git
 tags:
   - release manager
   - multi-agent
-source: https://github.com/Capgemini-Innersource/ptr_agents_devops.git
+
+prompts:
+  - "Analyze project readiness for production deployment with comprehensive assessment"
+  - "Review code scan results and test coverage to determine deployment readiness"
+  - "Evaluate security vulnerabilities and test results for release decision"
+  - "Assess overall project quality and provide deployment recommendation"
+  - "Coordinate full project analysis and create deployment readiness report"

@@ -1,14 +1,16 @@
 active: false
 name: Vulnerability Insights
-description: Analyzes Git repositories for security vulnerabilities and provides remediation recommendations
-cloud_provider: aws
+description: Legacy vulnerability analysis system for Git repositories that provides basic security scanning and remediation recommendations using AWS Bedrock infrastructure (currently inactive)
 type: bedrock
+cloud_provider: aws
 port: 8103
-order: 3
+
 instructions: |
   Please provide the Git repository URL and branch of the repository to be scanned. 
   
   This agent will analyze the repository and provide the recommendations.
+
+source: https://github.com/Capgemini-Innersource/ptr_agents_devops.git
 tags:
   - git
   - remediation

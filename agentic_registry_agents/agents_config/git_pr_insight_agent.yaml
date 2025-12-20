@@ -1,9 +1,9 @@
 name: Git PR Insights
-description: Analyzes GitHub pull requests to provide insights such as changed files, contributors, review status, and code quality metrics.
+description: GitHub pull request intelligence platform that provides comprehensive PR analysis including code changes, contributor insights, review status, quality metrics, and actionable recommendations for improved code collaboration
 type: mcp
 cloud_provider: aws
-port: 8101
-order: 1
+port: 8109
+
 instructions: |
   Please provide the GitHub repository URL and the pull request number. The agent will analyze the pull request and generate insights including:
     - list of changed files
@@ -14,21 +14,32 @@ instructions: |
 
   You may select specific insights from advanced options. By default, all insights are provided.
 
-servers:
+mcps:
   git_pr_utils:
     command: uv
     args:
-      - run
-      - --with
-      - git+https://github.com/Capgemini-Innersource/ptr-development-mcp-servers.git
-      - git_pr_analyzer_server
+      - "run"
+      - "--with"
+      - "git+https://github.com/Capgemini-Innersource/ptr-development-mcp-servers.git"
+      - "git-pr-analyzer-server"
+    description: Git PR analysis and utilities
+    title: Git PR Utils Server
 
 system_prompt: |
   You are a helpful assistant with access to Git PR analysis utilities. Format the output for clarity and easy understanding.
   Always provide clear, actionable insights.
+
+source: https://github.com/Capgemini-Innersource/ptr_agents_devops.git
 tags:
   - git
   - pr
   - pull-request
   - insight
   - analyze
+
+prompts:
+  - "Analyze pull request #123 in https://github.com/VinodKumarKP/python_project repository"
+  - "Review PR #456 in https://github.com/VinodKumarKP/python_project and provide code quality insights"
+  - "Examine pull request #789 in https://github.com/VinodKumarKP/python_project for review status"
+  - "Analyze PR #101 in https://github.com/VinodKumarKP/python_project and summarize changes"
+  - "Review pull request #202 in https://github.com/VinodKumarKP/python_project for contributor insights"

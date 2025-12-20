@@ -1,7 +1,10 @@
 active: true
 name: Vulnerability Insights
+description: Comprehensive security vulnerability scanner that analyzes Git repositories to identify potential security risks, code quality issues, and provides actionable remediation recommendations with detailed reports stored in S3
 type: mcp
-order: 2
+cloud_provider: aws
+port: 8104
+
 instructions: |
   Please provide the Git repository URL and branch of the repository to be scanned. 
   This agent will analyze the repository and provide the recommendations.
@@ -9,6 +12,7 @@ instructions: |
   User can select from following level of report:
     - Summary Report
     - Detailed Report
+
 mcps:
   code_remediation_server:
     command: uv
@@ -17,10 +21,27 @@ mcps:
       - "--with"
       - "git+https://github.com/Capgemini-Innersource/ptr-development-mcp-servers.git"
       - "code_remediation_server"
+    description: This server provides tools which analyzes the code and provides remediation recommendations
+    title: Code Remediation/Recommendation Server
     env:
       RESULTS_BUCKET: git-remediation-results-cpg-devops-agent-vkp
+
 system_prompt: |
   You are a helpful assistant with access to code remediation tools.
   Analyze the code remediation result of the provided project. Do not remediated code.
   Provide s3 bucket link to the results.
   Based on that analysis, provide a list of recommended actions.
+
+source: https://github.com/Capgemini-Innersource/ptr_agents_devops.git
+tags:
+  - code remediation
+  - security vulnerabilities
+  - code issues
+  - git
+
+prompts:
+  - "Analyze https://github.com/VinodKumarKP/python_project.git main branch for security vulnerabilities"
+  - "Scan https://github.com/VinodKumarKP/python_project.git develop branch and provide remediation recommendations"
+  - "Review https://github.com/VinodKumarKP/python_project.git feature/auth branch for code quality issues"
+  - "Examine https://github.com/VinodKumarKP/python_project.git release/v2.0 branch for potential security risks"
+  - "Assess https://github.com/VinodKumarKP/python_project.git master branch and generate detailed vulnerability report"

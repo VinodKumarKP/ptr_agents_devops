@@ -1,9 +1,9 @@
 name: Source Code Insights
-description: Analyzes Git repositories to provide comprehensive code insights including structure, languages, commits, and contributor statistics
+description: Advanced Git repository intelligence platform that provides deep code analysis including repository structure mapping, programming language detection, commit history insights, contributor statistics, and comprehensive development metrics
 type: mcp
 cloud_provider: aws
 port: 8101
-order: 1
+
 instructions: |
   Please provide the Git repository URL, and the agent will clone the repository to generate comprehensive analytical statistics. 
   The agent will provide the following statistics:
@@ -15,28 +15,35 @@ instructions: |
   
   User may select the list of statistics from the advanced options. By default, all the statistics are provided.
 
-servers:
+mcps:
   git_utils:
     command: uv
     args:
-      - run
-      - --with
-      - git+https://github.com/Capgemini-Innersource/ptr-development-mcp-servers.git
-      - git-mcp-server
+      - "run"
+      - "--with"
+      - "git+https://github.com/Capgemini-Innersource/ptr_mcp_servers_registry.git"
+      - "git-mcp-server"
+    description: Git cloning and git operation tools
+    title: Git Utils Server
     headers:
       test: '1'
-  email_utils:
-    command: uv
-    args:
-      - run
-      - --with
-      - git+https://github.com/Capgemini-Innersource/ptr-email-mcp-servers.git
-      - email_server
 
 system_prompt: |
   You are a helpful assistant with access to git utilities. Format the output in a way that is easy to read and understand.
   Always provide clear responses.
+
+source: https://github.com/Capgemini-Innersource/ptr_agents_devops.git
 tags:
   - git
   - insight
   - analyze
+
+environment:
+  GITHUB_TOKEN: ${GITHUB_TOKEN}
+
+prompts:
+  - "Analyze repository structure and languages for https://github.com/VinodKumarKP/python_project.git"
+  - "Get comprehensive code insights for https://github.com/VinodKumarKP/python_project.git"
+  - "Examine commit history and contributor stats for https://github.com/VinodKumarKP/python_project.git"
+  - "Analyze file structure and programming languages in https://github.com/VinodKumarKP/python_project.git"
+  - "Generate complete repository analysis for https://github.com/VinodKumarKP/python_project.git"

@@ -1,9 +1,9 @@
-name: Env Lookup Agent
-description: Analyze environment variables and provide insights on their usage, security implications, and best practices.
+name: Environment Lookup
+description: Environment security specialist that analyzes system environment variables, identifies security implications, provides best practices for secure configuration management, and offers actionable insights for environment optimization
 type: mcp
 cloud_provider: aws
-port: 8101
-order: 1
+port: 8110
+
 instructions: |
   Please provide the required environment variable names or patterns. The agent will analyze the environment variables and provide insights including:
     - usage context
@@ -12,22 +12,36 @@ instructions: |
 
 mcps:
   env_lookup_utils:
-    command: 'uv'
-    args: [ "run", "--with", "git+https://github.com/Capgemini-Innersource/ptr-cloud-mcp-servers.git ", "env_lookup_server" ]
-    headers:
+    command: uv
+    args:
+      - "run"
+      - "--with"
+      - "git+https://github.com/Capgemini-Innersource/ptr-cloud-mcp-servers.git"
+      - "env_lookup_server"
+    description: Environment variable lookup and analysis utilities
+    title: Environment Lookup Utils Server
+    env:
       DB_HOST: ${DB_HOST}
       DB_HOST1: ${DB_HOST1}
       DUMMY_VARIABLE: ${DUMMY_VARIABLE}
+
 system_prompt: |
   You are a helpful assistant with access to env lookup tools. Format the output for clarity and easy understanding.
   Always provide clear, actionable insights.
+
+source: https://github.com/Capgemini-Innersource/ptr_agents_devops.git
 tags:
-  - git
-  - pr
-  - pull-request
-  - insight
-  - analyze
-env:
+  - env
+  - environment
+
+environment:
+  DUMMY_VARIABLE: ${DUMMY_VARIABLE}
   DB_HOST: ${DB_HOST}
   DB_HOST1: ${DB_HOST1}
-  DUMMY_VARIABLE: ${DUMMY_VARIABLE}
+
+prompts:
+  - "Analyze all database-related environment variables and their security implications"
+  - "Review API key environment variables and provide security best practices"
+  - "Examine PATH and system environment variables for potential issues"
+  - "Analyze application configuration environment variables for optimization"
+  - "Review all environment variables containing sensitive data and recommend secure handling"
