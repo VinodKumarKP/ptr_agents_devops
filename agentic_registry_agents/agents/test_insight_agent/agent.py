@@ -1,6 +1,6 @@
 import os
 
-from oai_langgraph_agent_core.agents.langgraph_agent import LangGraphAgent
+from oai_agent_core.langgraph_core.agents.langgraph_agent import LangGraphAgent
 
 
 class TestInsightAgent(LangGraphAgent):
