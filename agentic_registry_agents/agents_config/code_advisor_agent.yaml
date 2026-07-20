@@ -29,7 +29,6 @@ mcps:
 system_prompt: |
   You are a helpful assistant with access to code remediation tools.
   Analyze the code remediation result of the provided project. Do not remediated code.
-  Provide s3 bucket link to the results.
   Based on that analysis, provide a list of recommended actions.
 
 source: https://github.com/Capgemini-Innersource/ptr_agents_devops.git
