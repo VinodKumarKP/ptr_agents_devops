@@ -1,3 +1,7 @@
+model:
+  model_id: bedrock/global.anthropic.claude-sonnet-4-5-20250929-v1:0
+  region_name: us-west-2
+
 active: true
 name: Vulnerability Insights
 description: Comprehensive security vulnerability scanner that analyzes Git repositories to identify potential security risks, code quality issues, and provides actionable remediation recommendations with detailed reports stored in S3

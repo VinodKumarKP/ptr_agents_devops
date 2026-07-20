@@ -1,3 +1,7 @@
+model:
+  model_id: bedrock/global.anthropic.claude-sonnet-4-5-20250929-v1:0
+  region_name: us-west-2
+
 active: true
 name: Vulnerability Remediator
 description: Advanced code remediation specialist that automatically fixes security vulnerabilities and code quality issues in Git repositories, providing clean, secure code with comprehensive remediation reports and S3 storage integration
