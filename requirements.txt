@@ -1,6 +1,6 @@
-oai-langgraph-core @ git+https://github.com/local-Innersource/ptr_oai_agent_development_kit@main#subdirectory=packages/langgraph-core
-oai-agent-server @ git+https://github.com/local-Innersource/ptr_oai_agent_development_kit.git@main#subdirectory=packages/agent-server
-mcp_registry_servers_development @ git+https://github.com/local-Innersource/ptr-development-mcp-servers.git@main
-mcp_registry_servers_cloud @ git+https://github.com/local-Innersource/ptr-cloud-mcp-servers.git@main
-mcp_registry_servers_enterprise @ git+https://github.com/local-Innersource/ptr-enterprise-mcp-servers.git@main
+oai-langgraph-core @ git+https://github.com/VinodKumarKP/ptr_oai_adk.git@main#subdirectory=packages/langgraph-core
+oai-agent-server @ git+https://github.com/VinodKumarKP/ptr_oai_adk.git@main#subdirectory=packages/agent-server
+mcp_registry_servers_development @ git+https://github.com/VinodKumarKP/ptr-development-mcp-servers.git@main
+mcp_registry_servers_cloud @ git+https://github.com/VinodKumarKP/ptr-cloud-mcp-servers.git@main
+mcp_registry_servers_enterprise @ git+https://github.com/VinodKumarKP/ptr-enterprise-mcp-servers.git@main
 langfuse
