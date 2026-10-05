@@ -22,7 +22,7 @@ RUN dos2unix /app/entrypoint.sh && chmod +x /app/entrypoint.sh
 
 # Make script executable and set ownership
 RUN chmod +x /app/entrypoint.sh && \
-    git config --system url.https://oauth2:${GITHUB_TOKEN}@github.com/Capgemini-Innersource.insteadOf https://github.com/Capgemini-Innersource
+    git config --system url.https://oauth2:${GITHUB_TOKEN}@github.com/local-Innersource.insteadOf https://github.com/local-Innersource
 
 # Copy requirements and install Python dependencies
 COPY requirements.txt ./

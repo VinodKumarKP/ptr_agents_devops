@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "agentic_registry_agents_devops"
 description = "AI Agent registry"
-authors = [{name = "Vinod Kumar KP", email = "vinod.kunnum-purath@capgemini.com"}]
+authors = [{name = "Vinod Kumar KP", email = "vinod.kunnum-purath@local.com"}]
 license = {text = "MIT"}
 readme = "README.md"
 requires-python = ">=3.11"
@@ -23,21 +23,21 @@ classifiers = [
 dependencies = [
     "oai-langgraph-core",
     "oai-agent-server",
-    "mcp_registry_servers_development @ git+https://github.com/Capgemini-Innersource/ptr-development-mcp-servers.git@main",
-    "mcp_registry_servers_cloud @ git+https://github.com/Capgemini-Innersource/ptr-cloud-mcp-servers.git@main",
-    "mcp_registry_servers_enterprise @ git+https://github.com/Capgemini-Innersource/ptr-enterprise-mcp-servers.git@main",
+    "mcp_registry_servers_development @ git+https://github.com/VinodKumarKP/ptr-development-mcp-servers.git@main",
+    "mcp_registry_servers_cloud @ git+https://github.com/VinodKumarKP/ptr-cloud-mcp-servers.git@main",
+    "mcp_registry_servers_enterprise @ git+https://github.com/VinodKumarKP/ptr-enterprise-mcp-servers.git@main",
     "langfuse"
 ]
 
 [tool.uv.sources]
- oai-langgraph-core = { git = "https://github.com/Capgemini-Innersource/ptr_oai_agent_development_kit.git", branch = "main", subdirectory = "packages/langgraph-core" }
- oai-agent-server = { git = "https://github.com/Capgemini-Innersource/ptr_oai_agent_development_kit.git", branch = "main", subdirectory = "packages/agent-server" }
+ oai-langgraph-core = { git = "https://github.com/VinodKumarKP/ptr_oai_adk.git", branch = "main", subdirectory = "packages/langgraph-core" }
+ oai-agent-server = { git = "https://github.com/VinodKumarKP/ptr_oai_adk.git", branch = "main", subdirectory = "packages/agent-server" }
 
 
 [project.urls]
-Homepage = "https://github.com/Capgemini-Innersource/ptr_mcp_servers_registry"
-Repository = "https://github.com/Capgemini-Innersource/ptr_mcp_servers_registry.gi"
-Issues = "https://github.com/Capgemini-Innersource/ptr_mcp_servers_registry/issues"
+Homepage = "https://github.com/local-Innersource/ptr_mcp_servers_registry"
+Repository = "https://github.com/local-Innersource/ptr_mcp_servers_registry.gi"
+Issues = "https://github.com/local-Innersource/ptr_mcp_servers_registry/issues"
 
 
 [tool.setuptools.packages.find]

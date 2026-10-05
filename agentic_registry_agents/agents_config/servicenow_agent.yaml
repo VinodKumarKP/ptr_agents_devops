@@ -26,7 +26,7 @@ system_prompt: |
   If necessary tools are not available, use model to get the answer. If the result is not available, inform the user that you are unable to find the information.
   Always provide clear responses.
 
-source: https://github.com/Capgemini-Innersource/ptr_agents_devops.git
+source: https://github.com/VinodKumarKP/ptr_agents_devops.git
 tags:
   - servicenow
 

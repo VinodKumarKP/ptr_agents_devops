@@ -52,7 +52,7 @@ system_prompt: |
   - Delegate ALL analysis work to agents
   - Ensure both security and testing perspectives are addressed before making deployment recommendations
 
-source: https://github.com/Capgemini-Innersource/ptr_agents_devops.git
+source: https://github.com/VinodKumarKP/ptr_agents_devops.git
 tags:
   - release manager
   - multi-agent
